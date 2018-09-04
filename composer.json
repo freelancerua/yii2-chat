@@ -1,0 +1,36 @@
+{
+    "name": "freelancerua/yii2-chat",
+
+    "type": "yii2-extension",
+
+    "description": "Yii2 real-time chat",
+    "keywords": ["yii2", "chat", "real-time"],
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://bitbucket.org/freelancerua/yii2-chat/issues?status=new&status=open",
+        "wiki": "https://bitbucket.org/freelancerua/yii2-chat/wiki/Home",
+        "source": "https://bitbucket.org/freelancerua/yii2-chat/src"
+    },
+    "authors": [
+        {
+            "name": "Dmytro S.",
+            "email": "freelancerua@protonmail.com"
+        }
+    ],
+
+    "require": {
+        "bower-asset/socket.io-client": "~2.1.1",
+        "bower-asset/vue": "~2.5.17",
+        "bower-asset/vuex": "~3.0.1",
+        "bower-asset/axios": "~0.18.0",
+        "bower-asset/momentjs": "~2.22.2",
+        "yiisoft/yii2-redis": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "^2.0.0"
+    },
+    
+    "autoload": {
+        "psr-4": {
+            "freelancerua\\yii2\\chat\\": ""
+        }
+    }
+}

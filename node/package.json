@@ -1,0 +1,32 @@
+{
+    "name": "Yii2-chat-server",
+    "description": "Server for yii2-chat php application",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/freelancerua/yii2-chat.git"
+    },
+    "keywords": [
+        "chat",
+        "server",
+        "realtime"
+    ],
+    "author": "Dmytro S.<freelanceua@protonmail.com>",
+    "license": "BSD 3-Clause",
+    "bugs": {
+      "url": "https://github.com/freelancerua/yii2-chat.git"
+    },
+    "homepage": "https://github.com/freelancerua/yii2-chat.git",
+    "dependencies": {
+        "express": "~4.16.0",
+        "socket.io": "~2.1.1",
+        "redis": "~2.8.0",
+        "fs": "~0.0.2",
+        "https": "~1.0.0",
+        "http": "*"
+    }
+}

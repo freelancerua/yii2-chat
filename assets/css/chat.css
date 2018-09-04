@@ -1,0 +1,240 @@
+/*
+ * This file is part of the yii2-chat project.
+ *
+ * yii2-chat project <https://bitbucket.org/freelancerua/yii2-chat/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/* Dialog */
+
+.f-yii2-chat .f-chat-container > div {
+    float: left;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog {
+    width: 35%;
+    border-right: 1px solid #CCC;
+    border-left: 1px solid #CCC;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-header .f-dialog-search input {
+    width: 100%;
+    border: 1px solid #CCC;
+    border-right: 0;
+    border-left: 0;
+    padding: 6px 10px;
+    font-size: 10pt;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-header .f-dialog-search input::placeholder {
+    font-size: 10pt;
+    color: gray;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body {
+    max-height: 500px;
+    min-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul {
+    list-style: none;
+    padding: 0;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li {
+    padding: 0;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li.f-no-dialogs {
+    text-align: center;
+    font-size: 10pt;
+    padding-top: 50px;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #CCC;
+    cursor: pointer;
+    padding: 10px 0;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div.f-selected-dialog {
+    background-color: #E8E8E8;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li:first-child > div {
+
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li:last-child > div {
+    border-bottom: 0;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div .f-unread-count {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    font-size: .6rem;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div .f-flex-item {
+    flex: 1;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div .f-img-wrap {
+    padding-left: 10px;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div img.f-userimage {
+    width: 100%;
+    border-radius: 15%;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div .f-dialog-content {
+    flex-grow: 4;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 80%; /* 4/5 */
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div .f-dialog-content .f-dialog-name-wrap {
+    position: relative;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div .f-dialog-content .f-name {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div .f-dialog-content .f-last-message {
+    font-size: 10pt;
+    display: block;
+    width: 100%;
+    color: #BBB;
+    overflow: hidden;
+    max-width: 100%;
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+.f-yii2-chat .f-chat-container .f-dialog .f-body > ul > li > div .f-dialog-content .f-online {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: absolute;
+    margin-left: 5px;
+}
+
+/* Message */
+
+.f-yii2-chat .f-chat-container .f-message {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 65%;
+    background-color: #E8E8E8;   
+    border-top: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-header h4 {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body {
+    max-height: 500px;
+    min-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul {
+    padding: 0;
+    list-style: none;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li {
+    padding: 10px 0;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li.f-no-message p {
+    text-align: center;
+    font-size: 10pt;
+    padding-top: 50px;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li > div.f-incoming {
+    padding-right: 20%;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li > div.f-outgoing {
+    padding-left: 20%;
+    text-align: right;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li > div .f-message-text {
+    padding: 0;
+    margin: 0;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li > div .f-message-wrap {
+    font-size: 12pt;
+    background-color: white;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    word-break: break-all;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li > div .f-message-details {
+    font-size: 9pt;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li > div .f-message-details 
+.f-message-deatils-seen {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-body > ul > li > div.f-outgoing 
+.f-message-details > span {
+    float: right;
+}
+
+/* Form */
+
+.f-yii2-chat .f-chat-container .f-message .f-footer #f-yii2-chat-form textarea {
+    border: 1px solid rgb(204, 204, 204);
+    line-height: 1.5;
+    padding: 10px;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-footer #f-yii2-chat-form button {
+    border: 1px solid #CCC;
+    padding: 2px 20px 5px 20px;
+    cursor: pointer;
+    margin: 10px 0;
+    float: right;
+}
+
+.f-yii2-chat .f-chat-container .f-message .f-footer #f-yii2-chat-form button:hover:enabled {
+    background-color: #2c3e50;
+    color: white;
+}
