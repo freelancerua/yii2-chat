@@ -110,12 +110,6 @@ pm2 start [@vendor]/freelancerua/yii2-chat/node/server.js --name yii2-chat-serve
     public $phpDateFormat = 'php:d/m/Y H:m:s';
     
     /**
-     * Socket IO server address
-     * @var string
-     */
-    public $socketAddress = null;
-    
-    /**
      * Redis instance name
      * @var type 
      */
