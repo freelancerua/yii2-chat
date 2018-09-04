@@ -74,6 +74,8 @@ npm update
 pm2 start [@vendor]/freelancerua/yii2-chat/node/server.js --name yii2-chat-server
 ```
 
+10. Implement IChatInterface to user class
+
 # Module config options you can change
 ```
 
@@ -94,12 +96,6 @@ pm2 start [@vendor]/freelancerua/yii2-chat/node/server.js --name yii2-chat-serve
      * @var string
      */
     public $jsFile = 'js/chat.js';
-    
-    /**
-     * App user class
-     * @var string
-     */
-    public $userClass = 'common\models\User';
     
     /**
      * Format message date when send and update state
