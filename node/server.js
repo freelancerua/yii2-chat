@@ -4,6 +4,9 @@ var http = require('http');
 var app = require('express')();
 var redis = require('redis');
 
+// Load config
+var config = require('./config.json');
+
 
 // Server
 // var options = {
@@ -11,14 +14,10 @@ var redis = require('redis');
    // cert: fs.readFileSync('path_to/fullchain.pem')
 // };
 
-console.log("server");
-
 // Http(s) server
-var serverPort = 8890;
-var serverName = '192.168.43.250';
+var serverPort = config.serverPort;
+var serverName = config.serverIp;
 var server = http.createServer(app).listen(serverPort, serverName);
-
-console.log("after server");
 
 // Sockekt.IO
 var io = require('socket.io')(server);
@@ -36,9 +35,9 @@ io.on('connection', function (socket) {
     console.log('New client connected: ' + uid);
     
     // Connect to redis
-    const redisPort = 6379;
-    const redisName = '127.0.0.1';
-    const redisAuth = ''; // Redis password
+    const redisPort = config.redisPort;
+    const redisName = config.redisIp;
+    const redisAuth = config.redisAuth; // Redis password
     var redisClient = redis.createClient(redisPort, redisName);
     if(redisAuth !== '') {
         redisClient.auth(redisAuth);

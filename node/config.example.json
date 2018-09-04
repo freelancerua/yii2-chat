@@ -1,0 +1,7 @@
+{
+    "serverPort": 8890,
+    "serverIp": "192.168.43.250", 
+    "redisPort": 6379,
+    "redisIp": "127.0.0.1",
+    "redisAuth": null
+}

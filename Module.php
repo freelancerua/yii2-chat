@@ -72,7 +72,7 @@ class Module extends BaseModule
      * Socket IO server address
      * @var string
      */
-    public $socketAddress = 'http://2big.frontend:8890';
+    public $socketAddress = null;
     
     /**
      * Redis instance name
@@ -107,8 +107,13 @@ class Module extends BaseModule
         
         // Check user interface 
         if(!(Yii::createObject($this->userClass) instanceof IChatInterface)) {
-            throw new InvalidConfigException('User class mast implement IChatInterface');
+            throw new InvalidConfigException('User class mast implement IChatInterface.');
         }
+        // Check socket address
+        if(!$this->socketAddress) {
+            throw new InvalidConfigException('Socket address must be set.');
+        }
+        
         // Set translatons
         $this->registerTranslations();
         // Initialize the module with the configuration loaded from config.php
