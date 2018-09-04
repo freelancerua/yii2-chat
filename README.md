@@ -55,7 +55,7 @@ npm install pm2 -g
 7. Update modules:
 ```
 npm update
-``
+```
 
 8. Copy config.example.json to config.json and setup confg values:
 ```
