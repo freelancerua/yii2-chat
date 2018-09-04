@@ -54,7 +54,7 @@ class Module extends BaseModule
      * App user class
      * @var string
      */
-    public $userClass = 'common\models\User';
+    public $userClass = null;
     
     /**
      * Format message date when send and update state
@@ -112,6 +112,10 @@ class Module extends BaseModule
         // Check socket address
         if(!$this->socketAddress) {
             throw new InvalidConfigException('Socket address must be set.');
+        }
+        // Check user class
+        if(!$this->userClass) {
+            throw new InvalidConfigException('User class must be set.');
         }
         
         // Set translatons

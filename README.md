@@ -31,7 +31,8 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-re
 modules' => [
     'chat' => [
         'class' => \freelancerua\yii2\chat\Module::class,
-        'socketAddress' => 'http://[domain|IP]:[port]' // Required
+        'socketAddress' => 'http://[domain|IP]:[port]',  // Required
+        'userClass' => path\to\user::class, // Required
         ...
     ],
 ],
@@ -71,4 +72,69 @@ npm update
 9. Start and add a process to the pm2 process list:
 ```
 pm2 start [@vendor]/freelancerua/yii2-chat/node/server.js --name yii2-chat-server
+```
+
+# Module config options you can change
+```
+
+    /**
+     * Default chat assets folder
+     * @var string
+     */
+    public $assets = '@vendor/freelancerua/yii2-chat/assets';
+    
+    /**
+     * Default chat style file
+     * @var string
+     */
+    public $styleFile = 'css/chat.css';
+    
+    /**
+     * Default chat js file
+     * @var string
+     */
+    public $jsFile = 'js/chat.js';
+    
+    /**
+     * App user class
+     * @var string
+     */
+    public $userClass = 'common\models\User';
+    
+    /**
+     * Format message date when send and update state
+     * @var string
+     */
+    public $jsDateFormat = 'DD/MM/YYYY H:mm:ss';
+    
+    /**
+     * Format message date with PHP
+     * @var string
+     */
+    public $phpDateFormat = 'php:d/m/Y H:m:s';
+    
+    /**
+     * Socket IO server address
+     * @var string
+     */
+    public $socketAddress = null;
+    
+    /**
+     * Redis instance name
+     * @var type 
+     */
+    public $redis = 'redis';
+    
+    /**
+     * Redis DB host
+     * @var string
+     */
+    public $redisHost = '127.0.0.1';
+    
+    /**
+     * Redis DB port
+     * @var integer
+     */
+    public $redisPort = 6379;
+
 ```
