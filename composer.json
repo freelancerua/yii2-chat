@@ -19,13 +19,14 @@
     ],
 
     "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "yiisoft/yii2-redis": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "^2.0.0",
         "bower-asset/socket.io-client": "~2.1.1",
         "bower-asset/vue": "~2.5.17",
         "bower-asset/vuex": "~3.0.1",
         "bower-asset/axios": "~0.18.0",
-        "bower-asset/momentjs": "~2.22.2",
-        "yiisoft/yii2-redis": "~2.0.0",
-        "yiisoft/yii2-swiftmailer": "^2.0.0"
+        "bower-asset/momentjs": "~2.22.2"
     },
     
     "autoload": {
