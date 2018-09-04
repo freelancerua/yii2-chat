@@ -32,5 +32,9 @@
         "psr-4": {
             "freelancerua\\yii2\\chat\\": ""
         }
-    }
+    },
+    
+    "minimum-stability": "dev",
+    "prefer-stable": true
+    
 }
