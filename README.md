@@ -61,7 +61,7 @@ npm update
 ```
 {
     "serverPort": 8890,
-    "serverIP": "192.168.43.250", // Exact as your domain IP or IP set in socketAddress
+    "serverIP": "[IP]", // Exact as your domain IP or IP set in socketAddress
     "redisPort": 6379,
     "redisName": "127.0.0.1",
     "redisAuth": null
