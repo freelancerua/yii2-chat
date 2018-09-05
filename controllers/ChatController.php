@@ -114,7 +114,7 @@ class ChatController extends BaseController
      */
     public function beforeAction($action)
     {
-        Yii::$app->user->identity->setOnline();
+        Yii::$app->user->identity->setIsOnline();
         
         if(!parent::beforeAction($action)) {
             return false;
