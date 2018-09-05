@@ -16,4 +16,5 @@ interface IChatInterface
     public function getChatImage();
     public function getChatName();
     public function getIsOnline();
+    public function setIsOnline();
 }

@@ -233,4 +233,12 @@ class Dialog extends BaseActiveRecord
         
         return ($dialog ? $dialog->id : 0);
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public static function getDb()
+    {
+        return Module::getInstance()->getDb();
+    }
 }

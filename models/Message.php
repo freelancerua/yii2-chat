@@ -184,4 +184,12 @@ class Message extends BaseActiveRecord
             'seen' => 0,
         ])->count();
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public static function getDb()
+    {
+        return Module::getInstance()->getDb();
+    }
 }

@@ -16,6 +16,7 @@ use yii\web\Controller as BaseController;
 use yii\filters\VerbFilter;
 use freelancerua\yii2\chat\Module;
 use yii\helpers\Json;
+use yii\filters\AccessControl;
 
 /**
  * This is the main controller class for the yii2-chat.
@@ -54,14 +55,26 @@ class ChatController extends BaseController
     public function behaviors()
     {
         return [
+            'access' => [
+                'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['send', 'message', 'message-seen', 'dialog', 'dialog-seen'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
-                    'index' => ['GET'],
                     'send' => ['POST'],
                     'message' => ['GET'],
                     'message-seen' => ['POST'],
                     'dialog' => ['GET'],
+                    'dalog-seen' => ['POST'],
                 ],
             ],
         ];
@@ -94,5 +107,18 @@ class ChatController extends BaseController
             'dialog' => actions\ActionDialog::class,
             'dialog-seen' => actions\ActionDialogSeen::class,
         ];
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function beforeAction($action)
+    {
+        Yii::$app->user->identity->setOnline();
+        
+        if(!parent::beforeAction($action)) {
+            return false;
+        }
+        return true;
     }
 }

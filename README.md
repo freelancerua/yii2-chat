@@ -33,10 +33,12 @@ modules' => [
         'class' => \freelancerua\yii2\chat\Module::class,
         'socketAddress' => 'http://[domain|IP]:[port]',  // Required
         'userClass' => path\to\user::class, // Required
+        'onlineWidow' => 1000 * 60 * 3, // Required
         ...
     ],
 ],
 ```
+Best way add this configuration to main-local.php (for advanced app)
 
 4. Follow this instructions to update/setup Node.js to version 10.x:
 ```
@@ -75,9 +77,28 @@ pm2 start [@vendor]/freelancerua/yii2-chat/node/server.js --name yii2-chat-serve
 ```
 
 10. Implement IChatInterface to user class
+- getChatImage() & getChatName() depends your class realization
+- getIsOnline() & setIsOnline() must be exact as below:
+``` 
+getIsOnline() 
+{
+    return (\freelancerua\yii2\chat\Module::getInstance()->onlineWidow
+                + $this->chat_is_online) > time();
+} 
+setIsOnline() 
+{
+    $this->chat_is_online = time();
+    return $this->update(false);
+}
+```
 
 # Module config options you can change
 ```
+
+    /**
+     * {@inheritdoc} 
+     */
+    public $db = 'db';
 
     /**
      * Default chat assets folder

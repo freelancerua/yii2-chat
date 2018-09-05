@@ -97,6 +97,12 @@ class Module extends BaseModule
      * @var integer
      */
     public $redisDb = 0;
+    
+    /**
+     * Online window time
+     * @var integer
+     */
+    public $onlineWidow = 0;
 
     /**
      * {@inheritdoc}
@@ -116,6 +122,10 @@ class Module extends BaseModule
         // Check user class
         if(!$this->userClass) {
             throw new InvalidConfigException('User class must be set.');
+        }
+        // Check online window
+        if($this->onlineWidow === 0) {
+            throw new InvalidConfigException('Online window must be set.');
         }
         
         // Set translatons
@@ -166,6 +176,6 @@ class Module extends BaseModule
      */
     public function getDb()
     {
-        return \Yii::$app->get($this->db);
+        return Yii::$app->get($this->db);
     }
 }
