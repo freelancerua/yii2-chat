@@ -59,7 +59,8 @@ class ChatController extends BaseController
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['send', 'message', 'message-seen', 'dialog', 'dialog-seen'],
+                        'actions' => ['index', 'send', 'message', 'message-seen', 
+                            'dialog', 'dialog-seen'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
