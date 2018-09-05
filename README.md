@@ -33,7 +33,7 @@ modules' => [
         'class' => \freelancerua\yii2\chat\Module::class,
         'socketAddress' => 'http://[domain|IP]:[port]',  // Required
         'userClass' => path\to\user::class, // Required
-        'onlineWidow' => 1000 * 60 * 3, // Required
+        'onlineWidow' => (60 * 3), // Required (3 minutes or other time)
         ...
     ],
 ],
