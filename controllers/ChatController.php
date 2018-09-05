@@ -56,7 +56,6 @@ class ChatController extends BaseController
     {
         return [
             'access' => [
-                'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
@@ -65,7 +64,6 @@ class ChatController extends BaseController
                         'roles' => ['@'],
                     ],
                 ],
-            ],
             ],
             'verbs' => [
                 'class' => VerbFilter::class,

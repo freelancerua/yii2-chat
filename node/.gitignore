@@ -2,3 +2,5 @@
 npm-debug.log
 package-lock.json
 config.json
+/nbproject
+.DS_Store
