@@ -38,6 +38,7 @@ modules' => [
     ],
 ],
 ```
+You can use other module name e.g. yiichat
 Best way add this configuration to main-local.php (for advanced app)
 
 4. Follow this instructions to update/setup Node.js to version 10.x:
@@ -90,6 +91,11 @@ setIsOnline()
     $this->chat_is_online = time();
     return $this->update(false);
 }
+```
+If you plan to use this function in not module context do not forget
+bootstrap this module.
+```
+'bootstrap' => [..., 'chat']
 ```
 
 # Module config options you can change
