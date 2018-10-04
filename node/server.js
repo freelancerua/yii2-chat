@@ -1,23 +1,25 @@
 var fs = require('fs');
-var http = require('http');
-// var https = require('https');
 var app = require('express')();
 var redis = require('redis');
 
 // Load config
 var config = require('./config.json');
 
+// Crete server instance
+var instace = (config.ssl ? require('https') : require('http'));
+
 
 // Server
-// var options = {
-   // key: fs.readFileSync('path_to/privkey.pem'),
-   // cert: fs.readFileSync('path_to/fullchain.pem')
-// };
+var options = (config.ssl ?  {
+   key: fs.readFileSync(config.key), // path_to/privkey.pem
+   cert: fs.readFileSync(config.cert) // path_to/fullchain.pem
+} : { });
 
 // Http(s) server
 var serverPort = config.serverPort;
 var serverName = config.serverIp;
-var server = http.createServer(app).listen(serverPort, serverName);
+var server = (config.ssl  ? instance.createServer(options, app).listen(serverPort, serverName)
+: instance.createServer(app).listen(serverPort, serverName));
 
 // Sockekt.IO
 var io = require('socket.io')(server);
