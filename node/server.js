@@ -6,7 +6,7 @@ var redis = require('redis');
 var config = require('./config.json');
 
 // Crete server instance
-var instace = (config.ssl ? require('https') : require('http'));
+var instance = (config.ssl ? require('https') : require('http'));
 
 
 // Server
